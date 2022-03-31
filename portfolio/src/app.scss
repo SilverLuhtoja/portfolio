@@ -1,0 +1,55 @@
+$primaryBtn : #14ada8;
+$mainColor : #15023a;
+$mainColor2 : #350b8a;
+$navWidth : 10em;
+$navAnimation : 0.3s all ease;
+
+$width : 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content
+    }
+}
+
+
+* {
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    overflow-x:hidden;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+
+.app{
+     height:100vh;
+    .sections {
+        width:100%;
+        height:100vh ;
+        background-color: $primaryBtn;
+        position: relative;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;  
+        scrollbar-width: none; // for firefox
+        &::-webkit-scrollbar{
+            display: none; // for firefox
+        }
+        
+        > * {
+            width: calc(100vw  - $navWidth);
+            height:100vh;
+            scroll-snap-align: start;
+        }
+        
+        &.active{
+            margin-left: $navWidth;
+            transition: $navAnimation;
+        }
+    }
+}

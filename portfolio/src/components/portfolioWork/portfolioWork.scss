@@ -1,0 +1,134 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+.portfolio-work{
+    height: 100vh;
+    width: 100vw;
+    background-color: palegoldenrod;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+
+    .back_btn{
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        border-radius: 50%;
+        background-color: rgba(116, 116, 116, 0.314);
+        border: 2px solid grey;
+        color: grey;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        transition: 0.3s all ease;
+        
+        &:hover{
+            font-size: 36px;
+            border: 3px solid black;
+            color: black;
+        }
+
+    }
+    
+    .work-wrapper{
+        height: 50vh;
+        width: 70vw;
+        background-color: rgb(255, 251, 212);
+        display: flex;
+        justify-content: space-between;
+        place-items: center;
+        flex-direction: column;
+        h1{
+            // background-color: grey;
+            width: 100%;
+            height: 8vh;
+            text-align: center;
+            place-content: center;
+        }
+
+        .bottom-box{
+            display: flex;
+            justify-content:space-between;
+            place-items: center;
+
+
+            .left{
+                height: 42vh;
+                width: 30vw;
+                display: flex;
+                justify-content:flex-start;
+                place-items: center;
+                flex-direction: column;
+                
+                .image-container{
+                    transition: 1s all ease;
+                    width: 30vw;
+                    height: 36vh;
+                    display: flex;
+                    transition: 1s all ease;
+                    overflow: hidden;
+                    
+                    img{
+                        object-fit: cover;
+                        margin: 0.5em;
+                        border:2px solid white ;
+                        border-radius: 10px;
+                        cursor: grab;
+                        
+                        
+                    }
+                    // &:hover {
+                    //     img{
+                    //         // object-fit:contain;
+                    //         transform: scale(1.5); 
+                    //         // display: block;
+                    //     }
+                    // }
+                    
+                    
+                }
+              
+                
+                .image-buttons{
+                    display: flex;
+                    width: 100px;
+                    justify-content: center;
+                    place-items: center;
+                    border-radius: 10px;
+                    
+                    .single-button{
+                        transition: 0.5s all ease;
+                        margin: 0.2em 0.3em ;
+                        width: 10px;
+                        height: 10px;
+                        background-color: grey;
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        
+                        &.active{
+                            background-color: green;
+                        }
+                    }
+                }
+
+            }
+            
+            .right{
+                height: 42vh;
+                width: 40vw;
+
+                h3{
+                    margin: 1em 0.5em;
+                }
+                
+                p{
+                    margin: 1em 0.5em;
+                }
+            }
+        }
+    }
+}

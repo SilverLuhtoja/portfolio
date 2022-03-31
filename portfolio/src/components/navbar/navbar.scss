@@ -1,0 +1,160 @@
+@import "../../app.scss" ;
+
+.navbar{
+    width: 0;
+    height: 100vh;
+    background-color: $mainColor;
+    position: fixed;
+    z-index:2;
+    color: white;
+    overflow: visible;
+    transition: $navAnimation;
+    
+    &.active{
+        width: $navWidth;
+    }
+
+    @include mobile{
+        &.active{
+            width: 100%;
+        }
+    }
+}
+
+.show_nav{
+    position: absolute;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background-color: $mainColor;
+    border-radius: 50%;
+    z-index: 10;
+    flex-direction: column;
+    cursor:pointer;
+    span{
+        transition: 0.75s all ease;
+        margin-top: 0.2em;
+        margin-left: 1em;
+        width: 0.5em;
+        height: 2px;
+        background: $mainColor2;
+        &:first-child{
+            transform: rotate(45deg) ;
+        }
+        &:last-child{
+            transform: rotate(-45deg) ;
+        }
+    }
+    
+    &.active{
+        span{
+            background: white;
+            width: 2em;
+            margin-left: 0em;
+            &:first-child{
+                transform: rotate(45deg) ;
+            }
+            &:last-child{
+                transform: rotate(-45deg) ;
+            }
+        }
+    }
+     @include mobile{
+        &.active{
+            right:0px;
+        }
+    }
+
+}
+
+.profile_img{
+    display: flex;
+    margin:2em  0 ;
+    position: relative;
+    overflow: hidden;
+
+
+    a{
+        margin: auto;
+       
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .img_name{
+        position: absolute;;
+        color: white;
+        padding: 0.25em;
+        bottom: 0;
+        right: 0;
+        margin-right: 0.25em;
+        background-color: $mainColor2;
+    }
+    
+     @include mobile{
+         .img_name{
+            bottom: 0em;
+            right: 7em;
+        }
+    }
+
+}
+
+
+ @include mobile{
+        .contact_info{
+        display: flex;
+        text-align: left;
+        justify-content: flex-start;
+        place-items: center;
+        flex-direction: column;
+    }
+}
+
+
+.item_container{
+    margin-left:1em;
+    display: flex;
+    align-content: center;
+    place-items: center;
+    span{
+     font-size: 0.75em;
+     margin-left: 0.25em;
+    }
+    .icon{
+        font-size: 1em;
+    }
+}
+
+
+.wrapper {
+    flex-direction: column;
+     a { 
+        text-decoration: none;
+        color: white;
+     }
+
+     > p {
+         margin-top: 2em;
+         display: flex;
+         justify-content: center;
+         place-items: center;
+         flex-direction: column;
+
+         &:hover{
+             font-weight: 600;
+         }
+     }
+     > p::after{
+         content: "";
+         width: 100px;
+         height: 2px;
+         background: $mainColor2;
+     }
+
+
+}
